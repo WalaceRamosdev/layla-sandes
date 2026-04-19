@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout 
+  title="Blog - Saúde Mental e Bem-estar" 
+  description="Artigos, dicas e reflexões sobre psicologia, ansiedade, relacionamentos e autoconhecimento com a psicóloga Layla Sandes."
+>
+  <Header />
+
+  <main class="pt-32">
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 reveal">
+          <span class="text-accent uppercase tracking-widest text-sm mb-4 block">Reflexões e Conhecimento</span>
+          <h1 class="text-4xl md:text-6xl mb-6">Blog da Dra. Layla</h1>
+          <p class="text-lg text-text-muted max-w-2xl mx-auto">
+            Informação de qualidade para te apoiar em sua jornada de desenvolvimento pessoal.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {posts.map(post => (
+            <article class="reveal group h-full flex flex-col">
+              <a href={`/blog/${post.slug}`} class="block overflow-hidden rounded-[2rem] mb-6 aspect-video bg-soft-bg">
+                {post.data.heroImage ? (
+                   <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                ) : (
+                   <div class="w-full h-full flex items-center justify-center text-accent/20 text-5xl">📖</div>
+                )}
+              </a>
+              <div class="flex-grow">
+                <span class="text-xs font-bold text-accent uppercase tracking-widest mb-3 block">{post.data.category}</span>
+                <h2 class="text-2xl font-serif mb-4 group-hover:text-accent transition-colors">
+                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                </h2>
+                <p class="text-sm text-text-muted mb-6 line-clamp-3">{post.data.description}</p>
+              </div>
+              <a href={`/blog/${post.slug}`} class="text-sm font-semibold flex items-center space-x-2 text-accent">
+                <span>Ler artigo completo</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

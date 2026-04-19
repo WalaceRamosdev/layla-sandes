@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+	ogImage?: string;
+}
+
+const { 
+	title, 
+	description = "Layla Sandes - Psicóloga especializada em ansiedade, depressão e relacionamentos. Atendimento humanizado e focado no seu bem-estar.",
+	ogImage = "/images/layla/layla-sandes-hero.png"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://laylasandes.com.br');
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO -->
+		<title>{title} | Layla Sandes Psicóloga</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Social -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(ogImage, Astro.url)} />
+		
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+		
+		<!-- Schema Markup -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Psychologist",
+				"name": "Layla Sandes",
+				"url": "https://laylasandes.com.br",
+				"logo": "https://laylasandes.com.br/logo.png",
+				"description": "Psicóloga clínica (TCC) especializada em ansiedade, dificuldade em se posicionar e medo de desagradar. Atendimento online para jovens adultos, adultos e idosos.",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Online",
+					"addressCountry": "BR"
+				},
+				"medicalSpecialty": ["Psychotherapy", "ClinicalPsychology"],
+				"paymentAccepted": ["Pix"],
+				"priceRange": "$$"
+			}
+		</script>
+	</head>
+	<body>
+		<slot />
+		
+		<!-- WhatsApp Floating Button -->
+		<a 
+			href="https://wa.me/5544991581606?text=Olá%20Layla,%20gostaria%20de%20agendar%20uma%20consulta." 
+			target="_blank"
+			rel="noopener noreferrer"
+			class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center"
+			aria-label="Falar no WhatsApp"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+		</a>
+
+		<script>
+			import { gsap } from 'gsap';
+			import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+			gsap.registerPlugin(ScrollTrigger);
+
+			// Reveal animations
+			const reveals = document.querySelectorAll('.reveal');
+			reveals.forEach((el) => {
+				gsap.to(el, {
+					opacity: 1,
+					y: 0,
+					duration: 1,
+					ease: 'power3.out',
+					scrollTrigger: {
+						trigger: el,
+						start: 'top 85%',
+						toggleActions: 'play none none none'
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

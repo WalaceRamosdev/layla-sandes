@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Sobre Mim" 
+  description="Conheça a trajetória e a abordagem terapêutica da psicóloga Layla Sandes. Compromisso com a ética, humanização e seu desenvolvimento pessoal."
+>
+  <Header />
+
+  <main class="pt-32">
+    <!-- Intro Section -->
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2 reveal">
+          <div class="border border-accent/20 p-2 relative">
+            <img src="/images/layla/layla-sande-about.png" alt="Layla Sandes" class="w-full h-auto grayscale opacity-90 hover:grayscale-0 transition-all duration-700" />
+          </div>
+        </div>
+        <div class="md:w-1/2 reveal">
+          <span class="text-accent font-medium uppercase tracking-[0.2em] text-[10px] mb-6 block">Trajetória e Propósito</span>
+          <h1 class="text-4xl md:text-7xl mb-8">Cuidar da sua mente é <span class="text-secondary italic">minha prioridade.</span></h1>
+          <p class="text-lg text-text-muted mb-6 leading-relaxed">
+            Olá, sou Layla Sandes. Sou psicóloga e trabalho com a **Terapia Cognitivo-Comportamental (TCC)**, com foco em pessoas que lidam com ansiedade, dificuldade em se posicionar e o medo constante de desagradar os outros.
+          </p>
+          <p class="text-lg text-text-muted mb-6">
+            No meu trabalho, busco oferecer um espaço seguro e acolhedor, onde você possa se entender melhor, desenvolver sua autonomia emocional e construir uma relação muito mais leve consigo mesma.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Values / Specialized Training -->
+    <section class="section-padding bg-soft-bg">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div class="reveal">
+          <h2 class="text-3xl mb-12">Formação & Experiência</h2>
+          <div class="space-y-8">
+            <div>
+              <h4 class="text-xl text-accent mb-1 uppercase tracking-widest font-display">Psicologia Clínica</h4>
+              <p class="text-xs text-text-muted">CRP 08/47025</p>
+            </div>
+            <div class="pt-6 border-t border-accent/10">
+              <h4 class="text-xl text-accent mb-1 uppercase tracking-widest font-display">Especialização</h4>
+              <p class="text-xs text-text-muted">Psicologia Jurídica e Perícia (Em andamento)</p>
+            </div>
+            <div class="pt-6 border-t border-accent/10">
+              <h4 class="text-xl text-accent mb-1 uppercase tracking-widest font-display">Público</h4>
+              <p class="text-xs text-text-muted">Jovens adultos, adultos e idosos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal col-span-1 lg:col-span-2 card-premium">
+          <h3 class="text-2xl mb-6">O que me diferencia</h3>
+          <p class="text-text-muted mb-6 leading-relaxed">
+            Meu trabalho envolve um olhar atento para padrões que muitas vezes passam despercebidos, como a dificuldade em dizer “não”, o excesso de responsabilidade emocional e a tendência de se colocar em segundo plano.
+          </p>
+          <p class="text-text-muted mb-8 leading-relaxed">
+            Busco trazer a terapia de forma prática e aplicável ao seu dia a dia, ajudando você não só a compreender o que sente, mas também a desenvolver estratégias reais para lidar com isso de forma mais leve e consciente.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="flex items-start space-x-3">
+              <div class="bg-secondary/20 p-2 rounded-full text-accent flex-shrink-0">✓</div>
+              <p class="text-sm">Foco em Autonomia Emocional</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="bg-secondary/20 p-2 rounded-full text-accent flex-shrink-0">✓</div>
+              <p class="text-sm">Estratégias Práticas (TCC)</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="bg-secondary/20 p-2 rounded-full text-accent flex-shrink-0">✓</div>
+              <p class="text-sm">Atendimento 100% Online</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="bg-secondary/20 p-2 rounded-full text-accent flex-shrink-0">✓</div>
+              <p class="text-sm">Espaço Seguro e Sem Julgamentos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Therapy? -->
+    <section class="section-padding">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <h2 class="text-3xl md:text-4xl mb-10 italic">"A jornada de mil milhas começa com um único passo."</h2>
+        <p class="text-lg text-text-muted mb-12">
+          Se você chegou até aqui, é porque algo dentro de você busca mudança. E eu estou aqui para te apoiar em cada etapa dessa transformação.
+        </p>
+        <a href="/contato" class="btn-primary">Vamos agendar uma conversa?</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

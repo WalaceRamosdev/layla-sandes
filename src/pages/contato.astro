@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Contato & Agendamento" 
+  description="Entre em contato com a psicóloga Layla Sandes para agendar seu atendimento online. Especialista em TCC para jovens adultos, adultos e idosos."
+>
+  <Header />
+
+  <main class="pt-32">
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <!-- Contact Info -->
+        <div class="reveal">
+          <span class="text-accent uppercase tracking-[0.2em] text-[10px] mb-6 block">Fale Comigo</span>
+          <h1 class="text-4xl md:text-7xl mb-8 leading-tight">Dê o primeiro passo para o seu <span class="italic text-secondary">bem-estar.</span></h1>
+          <p class="text-lg text-text-muted mb-12">
+            Estou aqui para te ouvir e te apoiar. Escolha o canal de sua preferência ou preencha o formulário ao lado.
+          </p>
+
+          <div class="space-y-12">
+            <div class="flex items-start space-x-6">
+              <div class="bg-secondary p-4 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-display text-lg uppercase tracking-widest text-accent mb-2">WhatsApp</h3>
+                <p class="text-xs text-text-muted mb-4 font-sans">Agendamento rápido e direto.</p>
+                <a href="https://wa.me/5544991581606?text=Olá%20Layla,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="text-secondary font-bold hover:text-accent transition-colors">(44) 99158-1606</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-6">
+              <div class="bg-secondary p-4 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <h3 class="font-display text-lg uppercase tracking-widest text-accent mb-2">E-mail</h3>
+                <p class="text-xs text-text-muted mb-4 font-sans">Para dúvidas gerais e parceiras.</p>
+                <a href="mailto:layla.tamily@hotmail.com" class="text-secondary font-bold hover:text-accent transition-colors">layla.tamily@hotmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-6">
+              <div class="bg-secondary p-4 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-display text-lg uppercase tracking-widest text-accent mb-2">Modalidade</h3>
+                <p class="text-xs text-text-muted font-sans italic">Atendimento 100% online,<br/>no conforto da sua casa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal bg-white p-10 md:p-16 border border-accent/20">
+          <form class="space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-3">
+                <label for="name" class="text-[10px] uppercase tracking-widest font-bold text-accent">Nome Completo</label>
+                <input type="text" id="name" name="name" class="w-full px-0 py-3 bg-transparent border-b border-accent/20 focus:border-secondary outline-none transition-all placeholder:text-text-muted placeholder:text-xs" placeholder="Seu nome" required />
+              </div>
+              <div class="space-y-3">
+                <label for="phone" class="text-[10px] uppercase tracking-widest font-bold text-accent">WhatsApp</label>
+                <input type="tel" id="phone" name="phone" class="w-full px-0 py-3 bg-transparent border-b border-accent/20 focus:border-secondary outline-none transition-all placeholder:text-text-muted placeholder:text-xs" placeholder="(00) 00000-0000" required />
+              </div>
+            </div>
+            
+            <div class="space-y-3">
+              <label for="subject" class="text-[10px] uppercase tracking-widest font-bold text-accent">Assunto</label>
+              <select id="subject" name="subject" class="w-full px-0 py-3 bg-transparent border-b border-accent/20 focus:border-secondary outline-none transition-all appearance-none cursor-pointer text-sm text-text-muted font-sans">
+                <option value="ansiedade">Terapia para Ansiedade</option>
+                <option value="depressao">Terapia para Depressão</option>
+                <option value="relacionamentos">Terapia de Relacionamentos</option>
+                <option value="autoconhecimento">Autoconhecimento</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+
+            <div class="space-y-3">
+              <label for="message" class="text-[10px] uppercase tracking-widest font-bold text-accent">Sua Mensagem</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-0 py-3 bg-transparent border-b border-accent/20 focus:border-secondary outline-none transition-all resize-none placeholder:text-text-muted placeholder:text-xs" placeholder="Como posso te ajudar?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full py-5 text-sm uppercase tracking-[0.2em]">Agendar Agora</button>
+            <p class="text-center text-[9px] uppercase tracking-widest text-text-muted mt-6 italic">Garantimos total sigilo e confidencialidade nos seus dados.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <Footer />
+</Layout>

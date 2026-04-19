@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  /* Site Colors */
+  --color-primary: #F8F1F2;
+  --color-secondary: #7A1E1E;
+  --color-accent: #C89A4B;
+  
+  /* Text Colors */
+  --color-text-main: #2C2C2C;
+  --color-text-muted: #5E5E5E;
+  --color-soft-bg: #F8F1F2;
+  
+  /* Typography */
+  --font-display: "Avegas Royale", "Playfair Display", serif;
+  --font-support: "Agatho Light", "Cormorant Garamond", serif;
+  --font-sans: "Poppins", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-primary text-text-main font-sans antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-display text-accent tracking-normal;
+  }
+  
+  h4, h5, h6 {
+    @apply font-support font-light italic;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-secondary text-primary rounded-none transition-all duration-300 hover:bg-accent hover:text-white uppercase tracking-widest text-xs font-semibold shadow-sm;
+  }
+  
+  .btn-outline {
+    @apply px-8 py-3 border border-secondary text-secondary rounded-none transition-all duration-300 hover:bg-secondary hover:text-primary uppercase tracking-widest text-xs font-semibold;
+  }
+
+  .section-padding {
+    @apply py-24 px-6 md:px-12 lg:px-32;
+  }
+
+  .glass-header {
+    @apply fixed top-0 left-0 w-full z-50 bg-primary/90 backdrop-blur-md border-b border-accent/10;
+  }
+
+  .card-premium {
+    @apply bg-white p-10 border border-accent/10 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-accent/30;
+  }
+}
+
+/* GSAP Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+

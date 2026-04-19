@@ -1,0 +1,73 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <Header />
+
+  <main class="pt-32">
+    <article class="section-padding">
+      <div class="max-w-3xl mx-auto">
+        <a href="/blog" class="text-accent text-sm font-semibold flex items-center space-x-2 mb-12 reveal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m11 17-5-5 5-5"/><path d="M18 12H6"/></svg>
+            <span>Voltar ao Blog</span>
+         </a>
+
+        <div class="reveal">
+            <span class="text-xs font-bold text-accent uppercase tracking-widest mb-4 block">{post.data.category}</span>
+            <h1 class="text-4xl md:text-6xl mb-8 leading-tight font-serif">{post.data.title}</h1>
+            <div class="flex items-center space-x-4 mb-12 text-sm text-text-muted">
+                <span>Por Layla Sandes</span>
+                <span>•</span>
+                <time datetime={post.data.pubDate.toISOString()}>
+                    {post.data.pubDate.toLocaleDateString('pt-BR', { dateStyle: 'long' })}
+                </time>
+            </div>
+        </div>
+
+        {post.data.heroImage && (
+            <div class="rounded-[2.5rem] overflow-hidden mb-12 reveal shadow-lg aspect-video">
+                <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover" />
+            </div>
+        )}
+
+        <div class="prose prose-lg max-w-none prose-accent prose-headings:font-serif reveal leading-relaxed text-text-muted">
+            <Content />
+        </div>
+
+        <div class="mt-20 p-12 bg-soft-bg rounded-[2.5rem] border border-secondary/20 reveal">
+            <h3 class="text-2xl mb-4">Gostou da leitura?</h3>
+            <p class="text-text-muted mb-8">Saiba como a terapia pode te ajudar a lidar com essas e outras questões de forma personalizada.</p>
+            <a href="/contato" class="btn-primary">Agendar conversa com Dra. Layla</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style is:global>
+    /* Styling content from Markdown */
+    .prose h2 { @apply text-3xl mt-12 mb-6 text-text-main; }
+    .prose h3 { @apply text-2xl mt-8 mb-4 text-text-main; }
+    .prose p { @apply mb-6; }
+    .prose ul { @apply list-disc pl-6 mb-6 space-y-2; }
+    .prose ol { @apply list-decimal pl-6 mb-6 space-y-2; }
+    .prose strong { @apply text-text-main font-semibold; }
+</style>

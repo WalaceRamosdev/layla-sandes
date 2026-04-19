@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const services = [
+  {
+    slug: 'ansiedade',
+    title: 'Terapia para Ansiedade',
+    description: 'Aprenda a lidar com o excesso de futuro e reencontre sua tranquilidade.',
+    icon: '🍃',
+    bg: 'bg-green-50'
+  },
+  {
+    slug: 'depressao',
+    title: 'Terapia para Depressão',
+    description: 'Suporte especializado para reencontrar o sentido e a alegria no dia a dia.',
+    icon: '☀️',
+    bg: 'bg-blue-50'
+  },
+  {
+    slug: 'relacionamentos',
+    title: 'Terapia de Relacionamentos',
+    description: 'Construa conexões mais saudáveis e aprenda a estabelecer limites.',
+    icon: '🤝',
+    bg: 'bg-rose-50'
+  },
+  {
+    slug: 'autoconhecimento',
+    title: 'Autoconhecimento',
+    description: 'Descubra quem você é e alcance seu máximo potencial emocional.',
+    icon: '✨',
+    bg: 'bg-amber-50'
+  }
+];
+---
+
+<Layout 
+  title="Serviços" 
+  description="Conheça os atendimentos especializados da psicóloga Layla Sandes: Ansiedade, Depressão, Relacionamentos e muito mais."
+>
+  <Header />
+
+  <main class="pt-32">
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 reveal">
+          <span class="text-accent uppercase tracking-widest text-sm mb-4 block">Especialidades</span>
+          <h1 class="text-4xl md:text-6xl mb-6">Como posso te ajudar hoje?</h1>
+          <p class="text-lg text-text-muted max-w-2xl mx-auto">
+            Cada processo é único. Ofereço abordagens personalizadas para as suas necessidades específicas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map(service => (
+            <a href={`/servicos/${service.slug}`} class={`group reveal p-12 rounded-[2.5rem] ${service.bg} transition-all duration-500 hover:scale-[1.02] hover:shadow-xl block`}>
+              <div class="text-5xl mb-6">{service.icon}</div>
+              <h2 class="text-2xl font-serif mb-4 group-hover:text-accent transition-colors">{service.title}</h2>
+              <p class="text-text-muted mb-8 leading-relaxed">{service.description}</p>
+              <span class="flex items-center space-x-2 text-accent font-semibold uppercase tracking-wider text-sm">
+                <span>Saiba mais</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Preview -->
+    <section class="section-padding bg-soft-bg">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl mb-12 text-center">Dúvidas Frequentes</h2>
+        <div class="space-y-6">
+          <details class="group bg-white p-6 rounded-2xl cursor-pointer reveal">
+            <summary class="font-medium list-none flex justify-between items-center">
+              Como funciona a primeira sessão?
+              <span class="group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="mt-4 text-sm text-text-muted">A primeira sessão é um momento de acolhimento e escuta inicial para entendermos sua demanda e como posso te ajudar.</p>
+          </details>
+          <details class="group bg-white p-6 rounded-2xl cursor-pointer reveal">
+            <summary class="font-medium list-none flex justify-between items-center">
+              Atende convênios médicos?
+              <span class="group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="mt-4 text-sm text-text-muted">Atualmente realizo atendimentos particulares e via reembolso (forneço nota fiscal para o pedido junto ao seu convênio).</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
