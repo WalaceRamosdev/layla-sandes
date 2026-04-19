@@ -8,62 +8,53 @@ const navItems = [
 ];
 ---
 
-<header id="navbar" class="glass-header">
-  <nav class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex justify-between items-center">
-    <a href="/" class="text-xl md:text-2xl font-display text-accent tracking-[0.2em] uppercase">
+<header id="navbar" class="fixed top-0 left-0 w-full z-[80] bg-[#F8F1F2] border-b border-accent/10">
+  <nav class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex justify-between items-center relative">
+    <!-- Logo -->
+    <a href="/" class="text-xl md:text-2xl font-display text-accent tracking-[0.2em] uppercase z-[90]">
       Layla <span class="text-secondary">Sandes</span>
     </a>
 
     <!-- Desktop Nav -->
-    <div class="hidden md:flex space-x-12">
+    <div class="hidden md:flex items-center space-x-10">
       {navItems.map(item => (
         <a 
           href={item.href} 
-          class="text-[10px] uppercase tracking-[0.3em] font-bold text-text-muted hover:text-secondary transition-all duration-300 relative group"
+          class="text-[10px] uppercase tracking-[0.3em] font-bold text-text-muted hover:text-secondary transition-colors"
         >
           {item.name}
-          <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
         </a>
       ))}
-    </div>
-
-    <div class="flex items-center space-x-6">
-      <a href="/contato" class="hidden md:block btn-primary px-10 py-2.5 text-[10px]">
+      <a href="/contato" class="btn-primary px-8 py-2.5 text-[10px]">
         Agendar
       </a>
-
-      <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-[70] relative" aria-label="Menu">
-        <span class="w-6 h-[1.5px] bg-secondary transform transition-all duration-300 origin-center" id="bar1"></span>
-        <span class="w-6 h-[1.5px] bg-secondary transition-all duration-300" id="bar2"></span>
-        <span class="w-6 h-[1.5px] bg-secondary transform transition-all duration-300 origin-center" id="bar3"></span>
-      </button>
     </div>
+
+    <!-- Mobile Menu Button (Ultra Visible) -->
+    <button id="menu-btn" class="md:hidden text-secondary p-2 z-[100] relative" aria-label="Menu">
+      <div id="burger-wrapper" class="transition-all duration-300">
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </div>
+      <div id="close-wrapper" class="hidden transition-all duration-300">
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </div>
+    </button>
   </nav>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="fixed inset-0 bg-primary/98 backdrop-blur-xl z-[60] flex flex-col items-center justify-center translate-x-full overflow-hidden">
-    <!-- Abstract Decoration -->
-    <div class="absolute -top-20 -right-20 w-80 h-80 bg-accent/5 rounded-full blur-[100px]"></div>
-    <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/5 rounded-full blur-[100px]"></div>
-
-    <div class="flex flex-col items-center space-y-10 z-10">
-      {navItems.map((item, index) => (
+  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-[#F8F1F2] z-[70] flex flex-col pt-32 p-10 h-screen w-full">
+    <div class="flex flex-col space-y-6">
+      {navItems.map(item => (
         <a 
           href={item.href} 
-          class="menu-link text-3xl font-display text-accent hover:text-secondary transition-colors uppercase tracking-[0.2em] opacity-0 translate-y-10"
+          class="menu-link text-3xl font-display text-accent uppercase tracking-widest border-b border-accent/10 pb-6 opacity-0 translate-y-6"
         >
           {item.name}
         </a>
       ))}
-      <a href="/contato" class="menu-link btn-primary text-xs px-16 py-5 mt-8 opacity-0 translate-y-10">
-        Agendar Consulta
-      </a>
-      
-      <div class="pt-20 menu-link opacity-0 translate-y-10 flex flex-col items-center space-y-4">
-        <p class="text-[9px] uppercase tracking-[0.3em] text-text-muted">Psicóloga Layla Sandes</p>
-        <p class="text-[9px] uppercase tracking-[0.3em] text-text-muted">CRP 08/47025</p>
-      </div>
+    </div>
+    <div class="pt-12 menu-link opacity-0 translate-y-6">
+      <a href="/contato" class="btn-primary w-full py-6 text-center text-sm shadow-2xl tracking-[0.2em]">Agendar Consulta</a>
     </div>
   </div>
 </header>
@@ -71,61 +62,64 @@ const navItems = [
 <script>
   import { gsap } from 'gsap';
 
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const bar1 = document.getElementById('bar1');
-  const bar2 = document.getElementById('bar2');
-  const bar3 = document.getElementById('bar3');
-  const menuLinks = document.querySelectorAll('.menu-link');
+  function initMenu() {
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const burgerWrapper = document.getElementById('burger-wrapper');
+    const closeWrapper = document.getElementById('close-wrapper');
+    const menuLinks = document.querySelectorAll('.menu-link');
 
-  let isMenuOpen = false;
+    if (!menuBtn || !mobileMenu || !burgerWrapper || !closeWrapper) return;
 
-  const tl = gsap.timeline({ paused: true });
+    let isOpen = false;
 
-  tl.to(mobileMenu, {
-    x: 0,
-    duration: 0.8,
-    ease: "power4.inOut"
-  })
-  .to(menuLinks, {
-    opacity: 1,
-    y: 0,
-    stagger: 0.1,
-    duration: 0.5,
-    ease: "back.out(1.7)"
-  }, "-=0.4");
-
-  if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-      isMenuOpen = !isMenuOpen;
+      isOpen = !isOpen;
       
-      if (isMenuOpen) {
-        tl.play();
+      if (isOpen) {
+        // Open
+        mobileMenu.classList.remove('hidden');
+        gsap.fromTo(mobileMenu, { y: '-100%' }, { y: '0%', duration: 0.5, ease: 'power4.out' });
+        
+        gsap.to(menuLinks, {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          ease: 'back.out(1.2)',
+          delay: 0.2
+        });
+
+        burgerWrapper.classList.add('hidden');
+        closeWrapper.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
-        // Animate Hamburger to X
-        gsap.to(bar1, { y: 3.5, rotate: 45, duration: 0.3 });
-        gsap.to(bar2, { opacity: 0, x: -10, duration: 0.3 });
-        gsap.to(bar3, { y: -3.5, rotate: -45, duration: 0.3 });
       } else {
-        tl.reverse();
-        document.body.style.overflow = 'auto';
-        // Animate X to Hamburger
-        gsap.to(bar1, { y: 0, rotate: 0, duration: 0.3 });
-        gsap.to(bar2, { opacity: 1, x: 0, duration: 0.3 });
-        gsap.to(bar3, { y: 0, rotate: 0, duration: 0.3 });
+        closeMenu();
       }
     });
 
-    // Close menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        isMenuOpen = false;
-        tl.reverse();
-        document.body.style.overflow = 'auto';
-        gsap.to(bar1, { y: 0, rotate: 0, duration: 0.3 });
-        gsap.to(bar2, { opacity: 1, x: 0, duration: 0.3 });
-        gsap.to(bar3, { y: 0, rotate: 0, duration: 0.3 });
+    function closeMenu() {
+      isOpen = false;
+      gsap.to(mobileMenu, { 
+        y: '-100%', 
+        duration: 0.4, 
+        ease: 'power4.in',
+        onComplete: () => {
+          mobileMenu?.classList.add('hidden');
+          gsap.set(menuLinks, { opacity: 0, y: 30 });
+        }
       });
+
+      closeWrapper.classList.add('hidden');
+      burgerWrapper.classList.remove('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
   }
+
+  initMenu();
+  document.addEventListener('astro:after-swap', initMenu);
 </script>
