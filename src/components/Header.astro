@@ -9,66 +9,122 @@ const navItems = [
 ---
 
 <header id="navbar" class="glass-header">
-  <nav class="max-w-7-xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
-    <a href="/" class="text-2xl font-display text-accent tracking-widest uppercase">
+  <nav class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex justify-between items-center">
+    <a href="/" class="text-xl md:text-2xl font-display text-accent tracking-[0.2em] uppercase">
       Layla <span class="text-secondary">Sandes</span>
     </a>
 
     <!-- Desktop Nav -->
-    <div class="hidden md:flex space-x-10">
+    <div class="hidden md:flex space-x-12">
       {navItems.map(item => (
         <a 
           href={item.href} 
-          class="text-[11px] uppercase tracking-widest font-medium text-text-muted hover:text-accent transition-colors"
+          class="text-[10px] uppercase tracking-[0.3em] font-bold text-text-muted hover:text-secondary transition-all duration-300 relative group"
         >
           {item.name}
+          <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
         </a>
       ))}
     </div>
 
-    <a href="/contato" class="hidden md:block btn-primary px-8 py-2">
-      Agendar
-    </a>
+    <div class="flex items-center space-x-6">
+      <a href="/contato" class="hidden md:block btn-primary px-10 py-2.5 text-[10px]">
+        Agendar
+      </a>
 
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="md:hidden text-secondary" aria-label="Abrir Menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-    </button>
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-[70] relative" aria-label="Menu">
+        <span class="w-6 h-[1.5px] bg-secondary transform transition-all duration-300 origin-center" id="bar1"></span>
+        <span class="w-6 h-[1.5px] bg-secondary transition-all duration-300" id="bar2"></span>
+        <span class="w-6 h-[1.5px] bg-secondary transform transition-all duration-300 origin-center" id="bar3"></span>
+      </button>
+    </div>
   </nav>
 
-  <!-- Mobile Menu (Hidden by default) -->
-  <div id="mobile-menu" class="hidden fixed inset-0 bg-primary z-[60] flex flex-col items-center justify-center space-y-10 text-3xl font-display">
-    <button id="close-btn" class="absolute top-6 right-6 text-secondary">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-    </button>
-    {navItems.map(item => (
-      <a href={item.href} class="text-accent hover:text-secondary transition-colors uppercase tracking-widest leading-none">{item.name}</a>
-    ))}
-    <a href="/contato" class="btn-primary text-sm px-12 py-4">Agendar Consulta</a>
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 bg-primary/98 backdrop-blur-xl z-[60] flex flex-col items-center justify-center translate-x-full overflow-hidden">
+    <!-- Abstract Decoration -->
+    <div class="absolute -top-20 -right-20 w-80 h-80 bg-accent/5 rounded-full blur-[100px]"></div>
+    <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/5 rounded-full blur-[100px]"></div>
+
+    <div class="flex flex-col items-center space-y-10 z-10">
+      {navItems.map((item, index) => (
+        <a 
+          href={item.href} 
+          class="menu-link text-3xl font-display text-accent hover:text-secondary transition-colors uppercase tracking-[0.2em] opacity-0 translate-y-10"
+        >
+          {item.name}
+        </a>
+      ))}
+      <a href="/contato" class="menu-link btn-primary text-xs px-16 py-5 mt-8 opacity-0 translate-y-10">
+        Agendar Consulta
+      </a>
+      
+      <div class="pt-20 menu-link opacity-0 translate-y-10 flex flex-col items-center space-y-4">
+        <p class="text-[9px] uppercase tracking-[0.3em] text-text-muted">Psicóloga Layla Sandes</p>
+        <p class="text-[9px] uppercase tracking-[0.3em] text-text-muted">CRP 08/47025</p>
+      </div>
+    </div>
   </div>
 </header>
 
 <script>
+  import { gsap } from 'gsap';
+
   const menuBtn = document.getElementById('menu-btn');
-  const closeBtn = document.getElementById('close-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+  const menuLinks = document.querySelectorAll('.menu-link');
 
-  if (menuBtn && closeBtn && mobileMenu) {
+  let isMenuOpen = false;
+
+  const tl = gsap.timeline({ paused: true });
+
+  tl.to(mobileMenu, {
+    x: 0,
+    duration: 0.8,
+    ease: "power4.inOut"
+  })
+  .to(menuLinks, {
+    opacity: 1,
+    y: 0,
+    stagger: 0.1,
+    duration: 0.5,
+    ease: "back.out(1.7)"
+  }, "-=0.4");
+
+  if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    });
-
-    closeBtn.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      document.body.style.overflow = 'auto';
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        tl.play();
+        document.body.style.overflow = 'hidden';
+        // Animate Hamburger to X
+        gsap.to(bar1, { y: 3.5, rotate: 45, duration: 0.3 });
+        gsap.to(bar2, { opacity: 0, x: -10, duration: 0.3 });
+        gsap.to(bar3, { y: -3.5, rotate: -45, duration: 0.3 });
+      } else {
+        tl.reverse();
+        document.body.style.overflow = 'auto';
+        // Animate X to Hamburger
+        gsap.to(bar1, { y: 0, rotate: 0, duration: 0.3 });
+        gsap.to(bar2, { opacity: 1, x: 0, duration: 0.3 });
+        gsap.to(bar3, { y: 0, rotate: 0, duration: 0.3 });
+      }
     });
 
     // Close menu on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        isMenuOpen = false;
+        tl.reverse();
         document.body.style.overflow = 'auto';
+        gsap.to(bar1, { y: 0, rotate: 0, duration: 0.3 });
+        gsap.to(bar2, { opacity: 1, x: 0, duration: 0.3 });
+        gsap.to(bar3, { y: 0, rotate: 0, duration: 0.3 });
       });
     });
   }
