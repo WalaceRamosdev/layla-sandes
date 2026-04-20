@@ -408,12 +408,12 @@ import Footer from "../components/Footer.astro";
 						>Agendamento</span
 					>
 					<h2 class="text-4xl md:text-6xl mb-8 leading-tight">
-						Escolha investir <br class="hidden md:block" /> na sua <span
-							class="italic text-secondary">saúde mental.</span>
+						Invista na sua<span
+							class="italic text-secondary"><br>Saúde Mental.</span>
 					</h2>
 					<p class="text-lg text-text-muted mb-12">
 						O primeiro passo é o mais importante, e você não precisa
-						caminhar sozinha. Vamos conversar? Atendimento 100%
+						caminhar sozinho(a). Vamos conversar? Atendimento 100%
 						online.
 					</p>
 
@@ -496,7 +496,7 @@ import Footer from "../components/Footer.astro";
 				<div
 					class="reveal bg-white p-8 md:p-12 border border-accent/10 shadow-sm rounded-3xl"
 				>
-					<form class="space-y-6">
+					<form id="whatsapp-form" class="space-y-6">
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 							<div class="space-y-2">
 								<label
@@ -504,6 +504,7 @@ import Footer from "../components/Footer.astro";
 									>Nome</label
 								>
 								<input
+									id="form-name"
 									type="text"
 									class="w-full px-4 py-3 bg-soft-bg rounded-xl border border-transparent focus:border-secondary outline-none transition-all placeholder:text-[10px]"
 									placeholder="Seu nome"
@@ -516,6 +517,7 @@ import Footer from "../components/Footer.astro";
 									>WhatsApp</label
 								>
 								<input
+									id="form-phone"
 									type="tel"
 									class="w-full px-4 py-3 bg-soft-bg rounded-xl border border-transparent focus:border-secondary outline-none transition-all placeholder:text-[10px]"
 									placeholder="(00) 00000-0000"
@@ -529,6 +531,7 @@ import Footer from "../components/Footer.astro";
 								>Mensagem</label
 							>
 							<textarea
+								id="form-message"
 								rows="4"
 								class="w-full px-4 py-3 bg-soft-bg rounded-xl border border-transparent focus:border-secondary outline-none transition-all resize-none placeholder:text-[10px]"
 								placeholder="Como posso te ajudar?"></textarea>
@@ -586,5 +589,29 @@ import Footer from "../components/Footer.astro";
 	}
 
 	initReadMore();
-	document.addEventListener('astro:after-swap', initReadMore);
+
+	function initWhatsappForm() {
+		const form = document.getElementById('whatsapp-form') as HTMLFormElement;
+		if (!form) return;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			
+			const name = (document.getElementById('form-name') as HTMLInputElement).value;
+			const phone = (document.getElementById('form-phone') as HTMLInputElement).value;
+			const message = (document.getElementById('form-message') as HTMLTextAreaElement).value;
+
+			const whatsappNumber = '5544991581606';
+			const text = encodeURIComponent(`Olá Layla, meu nome é ${name}.\nMeu WhatsApp é: ${phone}\n\n${message}`);
+			
+			window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+		});
+	}
+
+	initWhatsappForm();
+
+	document.addEventListener('astro:after-swap', () => {
+		initReadMore();
+		initWhatsappForm();
+	});
 </script>
