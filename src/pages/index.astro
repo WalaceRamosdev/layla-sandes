@@ -180,7 +180,7 @@ import heroBg from '../assets/hero_abstract_bg.png';
 					</h2>
 					<div class="space-y-6">
 						<p class="text-lg text-text-muted leading-relaxed">
-							Meu trabalho é fundamentado na **Terapia Cognitivo-Comportamental (TCC)**, uma abordagem baseada em evidências científicas que busca compreender a relação entre pensamentos, emoções e comportamentos.
+							Meu trabalho é fundamentado na Terapia Cognitivo-Comportamental (TCC), uma abordagem baseada em evidências científicas que busca compreender a relação entre pensamentos, emoções e comportamentos.
 						</p>
 						<p class="text-lg text-text-muted">
 							A TCC auxilia no reconhecimento de padrões que geram sofrimento emocional e no desenvolvimento de estratégias mais saudáveis para lidar com os desafios.
@@ -283,7 +283,7 @@ import heroBg from '../assets/hero_abstract_bg.png';
 								</div>
 								<div>
 									<h4 class="text-accent font-bold uppercase tracking-widest text-[10px] mb-1">Formato 100% Online</h4>
-									<p class="text-sm text-text-muted">Realizado via **Google Meet**. Você receberá um link seguro antes de cada encontro direto no seu WhatsApp.</p>
+									<p class="text-sm text-text-muted">Realizado via Google Meet. Você receberá um link seguro antes de cada encontro direto no seu WhatsApp.</p>
 								</div>
 							</div>
 							<div class="flex items-start space-x-4">
@@ -292,13 +292,43 @@ import heroBg from '../assets/hero_abstract_bg.png';
 								</div>
 								<div>
 									<h4 class="text-accent font-bold uppercase tracking-widest text-[10px] mb-1">Duração e Frequência</h4>
-									<p class="text-sm text-text-muted">Aproximadamente **50 minutos**. Os encontros ocorrem semanalmente, ajustados conforme sua necessidade.</p>
+									<p class="text-sm text-text-muted">Aproximadamente 50 minutos. Os encontros ocorrem semanalmente, ajustados conforme sua necessidade.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="relative">
-						<img src="/images/layla/laylasandes-atendimento-online.webp" alt="Sessão de Atendimento Online" class="rounded-3xl shadow-2xl" />
+					<div class="relative flex items-center justify-center bg-primary/20 rounded-3xl min-h-[400px] border border-accent/10 overflow-hidden group">
+                        <!-- Abstract Connection Artifact -->
+                        <div class="relative w-64 h-64 flex items-center justify-center">
+                            <!-- Pulsing Aura -->
+                            <div class="absolute inset-0 bg-accent/5 rounded-full animate-ping opacity-20"></div>
+                            <div class="absolute inset-4 border border-accent/10 rounded-full animate-pulse-slow opacity-40"></div>
+                            <div class="absolute inset-12 border border-secondary/20 rounded-full animate-pulse opacity-30 [animation-delay:0.5s]"></div>
+                            
+                            <!-- Central Connection Symbol -->
+                            <svg viewBox="0 0 100 100" class="w-32 h-32 relative z-10 transition-transform duration-700 group-hover:scale-110">
+                                <defs>
+                                    <linearGradient id="connGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:var(--color-secondary);stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:var(--color-accent);stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Infinity Flow -->
+                                <path 
+                                    d="M30,50 C30,30 50,30 50,50 C50,70 70,70 70,50" 
+                                    fill="none" 
+                                    stroke="url(#connGradient)" 
+                                    stroke-width="1.5" 
+                                    stroke-linecap="round"
+                                    class="opacity-80"
+                                />
+                                <circle cx="30" cy="50" r="3" fill="currentColor" class="text-secondary animate-pulse" />
+                                <circle cx="70" cy="50" r="3" fill="currentColor" class="text-accent animate-pulse [animation-delay:0.7s]" />
+                                <!-- Core Spark -->
+                                <circle cx="50" cy="50" r="1.5" fill="currentColor" class="text-accent animate-ping" />
+                            </svg>
+                        </div>
+
 						<div class="absolute -bottom-6 -right-6 bg-accent p-8 text-white rounded-2xl hidden md:block">
 							<p class="text-xs uppercase tracking-widest font-bold">Sigilo e Ética</p>
 							<p class="text-[9px] opacity-80 mt-1">Ambiente seguro e reservado.</p>
