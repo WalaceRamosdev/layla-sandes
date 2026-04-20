@@ -2,11 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-// Use the generated image path (it will be copied to public by the user or I can mock the path)
-// Actually, I should use a path that will work in the final project. 
-// I'll suggest the user to put it in /public/images/hero.png
-const heroImage = "/images/layla/layla-sandes-hero.png"; 
 ---
 
 <Layout 
@@ -17,37 +12,30 @@ const heroImage = "/images/layla/layla-sandes-hero.png";
 	
 	<main>
 		<!-- Hero Section -->
-		<section class="relative min-h-screen flex items-center pt-20 bg-primary">
-			<div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
-				<div class="reveal">
-				
-					<h1 class="text-5xl md:text-8xl font-display text-accent leading-tight mb-8">
-						Mais leveza  <span class="text-secondary italic"><br>com Você.</span>
+		<section class="relative min-h-[90vh] flex items-center pt-20 bg-primary">
+			<div class="max-w-5xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col items-center text-center">
+				<div class="reveal flex flex-col items-center">
+					<h1 class="text-4xl md:text-6xl lg:text-7xl font-display text-accent leading-[1.1] mb-8 max-w-4xl">
+						Nem sempre é fácil compreender aquilo que <span class="text-secondary italic">Sentimos.</span>
 					</h1>
-					<p class="text-lg text-text-muted mb-10 max-w-lg">
-						Psicóloga especialista em TCC, focada em ajudar você a superar a ansiedade, o medo de desagradar e a desenvolver sua autonomia emocional.
+					<p class="text-lg md:text-xl text-text-muted mb-10 max-w-2xl">
+						Psicoterapia com base científica e escuta acolhedora.
 					</p>
-					<div class="flex flex-col sm:flex-row gap-4">
-						<a href="/contato" class="btn-primary flex items-center justify-center space-x-2">
+					<div class="flex flex-col sm:flex-row gap-6 justify-center">
+						<a href="/contato" class="btn-primary flex items-center justify-center space-x-2 px-10">
 							<span>Agendar Consulta</span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
 						</a>
-						<a href="/sobre" class="btn-outline flex items-center justify-center">
+						<a href="/sobre" class="btn-outline flex items-center justify-center px-10">
 							Conhecer Abordagem
 						</a>
 					</div>
 				</div>
-				<div class="reveal relative">
-					<div class="border border-accent/20 p-2 relative z-10 shadow-2xl">
-						<img 
-							src={heroImage} 
-							alt="Layla Sandes - Psicóloga" 
-							class="w-full h-auto"
-						/>
-					</div>
-					<!-- Decoration -->
-					<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
-					<div class="absolute -top-10 -right-10 w-60 h-60 bg-secondary/5 rounded-full blur-3xl"></div>
+				
+				<!-- Background Decorations -->
+				<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-0 overflow-hidden pointer-events-none">
+					<div class="absolute top-1/4 -left-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+					<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
 				</div>
 			</div>
 		</section>
