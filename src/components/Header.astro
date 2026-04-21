@@ -9,10 +9,12 @@ const navItems = [
 ---
 
 <header id="navbar" class="fixed top-0 left-0 w-full z-[80] transition-all duration-500 py-6 px-4 md:px-10">
-  <div class="max-w-7xl mx-auto flex justify-between items-center relative py-4 px-6 md:px-10 transition-all duration-500 rounded-[2rem] border border-transparent" id="nav-container">
+  <div class="max-w-7xl mx-auto flex justify-between items-center relative z-[100] py-4 px-6 md:px-10 transition-all duration-500 rounded-[2rem] border border-transparent" id="nav-container">
     <!-- Logo -->
-    <a href="/" class="z-[90] flex items-center transition-transform duration-300 hover:scale-105">
-      <img src="/images/logos/logo.svg" alt="Layla Sandes" class="h-10 md:h-12 w-auto" />
+    <a href="/" class="z-[110] flex items-center transition-transform duration-500 hover:rotate-3">
+      <div class="bg-white p-1.5 md:p-2 rounded-full shadow-sm border border-accent/10 transition-shadow duration-300 hover:shadow-md">
+        <img src="/images/logos/logo.svg" alt="Layla Sandes" class="h-11 md:h-16 w-auto" />
+      </div>
     </a>
 
     <!-- Desktop Nav -->
@@ -72,20 +74,24 @@ const navItems = [
     const line2 = document.getElementById('line-2');
     const line3 = document.getElementById('line-3');
 
-    if (!navbar || !navContainer || !menuBtn || !mobileMenu) return;
+    const logoContainer = navContainer?.querySelector('div');
+
+    if (!navbar || !navContainer || !menuBtn || !mobileMenu || !logoContainer) return;
 
     // Scroll Effect
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         navbar.classList.add('py-2');
         navbar.classList.remove('py-6');
-        navContainer.classList.add('bg-white/70', 'backdrop-blur-md', 'shadow-lg', 'border-accent/10', 'py-3');
+        navContainer.classList.add('bg-white/70', 'backdrop-blur-md', 'shadow-lg', 'border-accent/10', 'py-2');
         navContainer.classList.remove('py-4', 'border-transparent');
+        logoContainer.classList.add('scale-75');
       } else {
         navbar.classList.add('py-6');
         navbar.classList.remove('py-2');
-        navContainer.classList.remove('bg-white/70', 'backdrop-blur-md', 'shadow-lg', 'border-accent/10', 'py-3');
+        navContainer.classList.remove('bg-white/70', 'backdrop-blur-md', 'shadow-lg', 'border-accent/10', 'py-2');
         navContainer.classList.add('py-4', 'border-transparent');
+        logoContainer.classList.remove('scale-75');
       }
     });
 
