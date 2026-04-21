@@ -8,53 +8,53 @@ const navItems = [
 ];
 ---
 
-<header id="navbar" class="fixed top-0 left-0 w-full z-[80] bg-[#F8F1F2] border-b border-accent/10">
-  <nav class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex justify-between items-center relative">
+<header id="navbar" class="fixed top-0 left-0 w-full z-[80] transition-all duration-500 py-6 px-4 md:px-10">
+  <div class="max-w-7xl mx-auto flex justify-between items-center relative py-4 px-6 md:px-10 transition-all duration-500 rounded-[2rem] border border-transparent" id="nav-container">
     <!-- Logo -->
-    <a href="/" class="z-[90] flex items-center">
-      <img src="/images/logos/logo.svg" alt="Layla Sandes" class="h-10 md:h-14 w-auto" />
+    <a href="/" class="z-[90] flex items-center transition-transform duration-300 hover:scale-105">
+      <img src="/images/logos/logo.svg" alt="Layla Sandes" class="h-10 md:h-12 w-auto" />
     </a>
 
     <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center space-x-10">
+    <div class="hidden md:flex items-center space-x-12">
       {navItems.map(item => (
         <a 
           href={item.href} 
-          class="text-[10px] uppercase tracking-[0.3em] font-bold text-text-muted hover:text-secondary transition-colors"
+          class="nav-link relative text-[10px] uppercase tracking-[0.3em] font-bold text-black hover:text-secondary transition-colors"
         >
           {item.name}
+          <span class="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-secondary transition-all duration-300 link-underline"></span>
         </a>
       ))}
-      <a href="/#contato" class="btn-primary px-8 py-2.5 text-[10px]">
+      <a href="/#contato" class="btn-primary-modern px-10 py-3 text-[10px] uppercase tracking-widest font-bold rounded-full transition-all duration-300">
         Agendar
       </a>
     </div>
 
-    <!-- Mobile Menu Button (Ultra Visible) -->
-    <button id="menu-btn" class="md:hidden text-secondary p-2 z-[100] relative" aria-label="Menu">
-      <div id="burger-wrapper" class="transition-all duration-300">
-        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-      </div>
-      <div id="close-wrapper" class="hidden transition-all duration-300">
-        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-black p-2 z-[100] relative group" aria-label="Menu">
+      <div id="burger-wrapper" class="flex flex-col space-y-1.5 transition-all duration-300 group-hover:scale-110">
+        <span class="w-8 h-[2px] bg-black rounded-full transition-all duration-300 origin-center" id="line-1"></span>
+        <span class="w-5 h-[2px] bg-black rounded-full ml-auto transition-all duration-300" id="line-2"></span>
+        <span class="w-8 h-[2px] bg-black rounded-full transition-all duration-300 origin-center" id="line-3"></span>
       </div>
     </button>
-  </nav>
+  </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-[#F8F1F2] z-[70] flex flex-col pt-32 p-10 h-screen w-full">
-    <div class="flex flex-col space-y-6">
-      {navItems.map(item => (
+  <!-- Mobile Menu Overlay (Premium Glass) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#FDFBF7]/90 backdrop-blur-2xl z-[70] hidden flex-col justify-start items-center pt-40 px-10 h-screen w-full transition-all duration-500 translate-x-full">
+    <div class="flex flex-col justify-center items-center space-y-8 text-center w-full">
+      {navItems.map((item) => (
         <a 
           href={item.href} 
-          class="menu-link text-3xl font-display text-accent uppercase tracking-widest border-b border-accent/10 pb-6 opacity-0 translate-y-6"
+          class="menu-link block w-full text-4xl font-display text-accent uppercase tracking-widest opacity-0 translate-y-10 hover:text-secondary transition-all"
         >
           {item.name}
         </a>
       ))}
     </div>
-    <div class="pt-12 menu-link opacity-0 translate-y-6">
-      <a href="/#contato" class="btn-primary w-full py-6 text-center text-sm shadow-2xl tracking-[0.2em]">Agendar Consulta</a>
+    <div class="mt-16 menu-link opacity-0 translate-y-10 w-full max-w-xs">
+      <a href="/#contato" class="btn-primary w-full py-6 text-center text-sm shadow-2xl tracking-[0.3em] uppercase font-bold rounded-full">Agendar Consulta</a>
     </div>
   </div>
 </header>
@@ -62,14 +62,32 @@ const navItems = [
 <script>
   import { gsap } from 'gsap';
 
-  function initMenu() {
+  function initHeader() {
+    const navbar = document.getElementById('navbar');
+    const navContainer = document.getElementById('nav-container');
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const burgerWrapper = document.getElementById('burger-wrapper');
-    const closeWrapper = document.getElementById('close-wrapper');
     const menuLinks = document.querySelectorAll('.menu-link');
+    const line1 = document.getElementById('line-1');
+    const line2 = document.getElementById('line-2');
+    const line3 = document.getElementById('line-3');
 
-    if (!menuBtn || !mobileMenu || !burgerWrapper || !closeWrapper) return;
+    if (!navbar || !navContainer || !menuBtn || !mobileMenu) return;
+
+    // Scroll Effect
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-2');
+        navbar.classList.remove('py-6');
+        navContainer.classList.add('bg-white/70', 'backdrop-blur-md', 'shadow-lg', 'border-accent/10', 'py-3');
+        navContainer.classList.remove('py-4', 'border-transparent');
+      } else {
+        navbar.classList.add('py-6');
+        navbar.classList.remove('py-2');
+        navContainer.classList.remove('bg-white/70', 'backdrop-blur-md', 'shadow-lg', 'border-accent/10', 'py-3');
+        navContainer.classList.add('py-4', 'border-transparent');
+      }
+    });
 
     let isOpen = false;
 
@@ -77,21 +95,23 @@ const navItems = [
       isOpen = !isOpen;
       
       if (isOpen) {
-        // Open
         mobileMenu.classList.remove('hidden');
-        gsap.fromTo(mobileMenu, { y: '-100%' }, { y: '0%', duration: 0.5, ease: 'power4.out' });
+        gsap.to(mobileMenu, { translateX: 0, duration: 0.8, ease: 'expo.out' });
         
         gsap.to(menuLinks, {
           opacity: 1,
           y: 0,
           stagger: 0.1,
-          duration: 0.5,
-          ease: 'back.out(1.2)',
-          delay: 0.2
+          duration: 0.8,
+          ease: 'power4.out',
+          delay: 0.3
         });
 
-        burgerWrapper.classList.add('hidden');
-        closeWrapper.classList.remove('hidden');
+        // Burger X Animation
+        gsap.to(line1, { rotate: 45, y: 8, duration: 0.4 });
+        gsap.to(line2, { opacity: 0, x: -20, duration: 0.4 });
+        gsap.to(line3, { rotate: -45, y: -8, duration: 0.4 });
+
         document.body.style.overflow = 'hidden';
       } else {
         closeMenu();
@@ -101,17 +121,20 @@ const navItems = [
     function closeMenu() {
       isOpen = false;
       gsap.to(mobileMenu, { 
-        y: '-100%', 
-        duration: 0.4, 
-        ease: 'power4.in',
+        translateX: '100%', 
+        duration: 0.8, 
+        ease: 'expo.inOut',
         onComplete: () => {
           mobileMenu?.classList.add('hidden');
-          gsap.set(menuLinks, { opacity: 0, y: 30 });
+          gsap.set(menuLinks, { opacity: 0, y: 40 });
         }
       });
 
-      closeWrapper?.classList.add('hidden');
-      burgerWrapper?.classList.remove('hidden');
+      // Burger Reset Animation
+      gsap.to(line1, { rotate: 0, y: 0, duration: 0.4 });
+      gsap.to(line2, { opacity: 1, x: 0, duration: 0.4 });
+      gsap.to(line3, { rotate: 0, y: 0, duration: 0.4 });
+
       document.body.style.overflow = 'auto';
     }
 
@@ -120,6 +143,25 @@ const navItems = [
     });
   }
 
-  initMenu();
-  document.addEventListener('astro:after-swap', initMenu);
+  // Initialize on load and on Astro navigation
+  initHeader();
+  document.addEventListener('astro:after-swap', initHeader);
 </script>
+
+<style>
+  .nav-link:hover .link-underline {
+    width: 100%;
+  }
+
+  .btn-primary-modern {
+    background-color: var(--color-secondary);
+    color: white;
+    box-shadow: 0 10px 20px -5px rgba(var(--color-secondary-rgb), 0.3);
+  }
+
+  .btn-primary-modern:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -10px rgba(var(--color-accent-rgb), 0.4);
+  }
+</style>
