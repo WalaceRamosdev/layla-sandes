@@ -95,6 +95,37 @@ import Footer from '../components/Footer.astro';
 
 
   </main>
+<script>
+	function initContactPageForm() {
+		const form = document.querySelector('form');
+		if (!form) return;
 
-  <Footer />
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			
+			const nomeEl = document.getElementById('name') as HTMLInputElement | null;
+			const whatsappEl = document.getElementById('phone') as HTMLInputElement | null;
+			const assuntoEl = document.getElementById('subject') as HTMLSelectElement | null;
+			const mensagemEl = document.getElementById('message') as HTMLTextAreaElement | null;
+
+			if (!nomeEl || !whatsappEl || !assuntoEl || !mensagemEl) return;
+
+			const nome = nomeEl.value;
+			const whatsapp = whatsappEl.value;
+			const assuntoTexto = assuntoEl.options[assuntoEl.selectedIndex]?.text || 'Não especificado';
+			const mensagem = mensagemEl.value;
+			
+			const numeroWhatsApp = '5544991581606';
+			const textoBase = `Olá Layla, meu nome é ${nome}. \n\n*Agendamento/Contato:* ${assuntoTexto} \n*WhatsApp:* ${whatsapp} \n*Mensagem:* ${mensagem}`;
+			
+			const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoBase)}`;
+			
+			window.open(url, '_blank');
+		});
+	}
+
+	initContactPageForm();
+	document.addEventListener('astro:after-swap', initContactPageForm);
+</script>
+	<Footer />
 </Layout>

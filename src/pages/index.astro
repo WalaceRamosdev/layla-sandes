@@ -524,7 +524,7 @@ import heroBg from '../assets/hero_abstract_bg.png';
 				<div
 					class="reveal bg-white p-8 md:p-12 border border-accent/10 shadow-sm rounded-3xl"
 				>
-					<form class="space-y-6">
+					<form id="form-contato" class="space-y-6">
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 							<div class="space-y-2">
 								<label
@@ -532,6 +532,7 @@ import heroBg from '../assets/hero_abstract_bg.png';
 									>Nome</label
 								>
 								<input
+									id="contato-nome"
 									type="text"
 									class="w-full px-4 py-3 bg-soft-bg rounded-xl border border-transparent focus:border-secondary outline-none transition-all placeholder:text-[10px]"
 									placeholder="Seu nome"
@@ -544,6 +545,7 @@ import heroBg from '../assets/hero_abstract_bg.png';
 									>WhatsApp</label
 								>
 								<input
+									id="contato-whatsapp"
 									type="tel"
 									class="w-full px-4 py-3 bg-soft-bg rounded-xl border border-transparent focus:border-secondary outline-none transition-all placeholder:text-[10px]"
 									placeholder="(00) 00000-0000"
@@ -557,6 +559,7 @@ import heroBg from '../assets/hero_abstract_bg.png';
 								>Mensagem</label
 							>
 							<textarea
+								id="contato-mensagem"
 								rows="4"
 								class="w-full px-4 py-3 bg-soft-bg rounded-xl border border-transparent focus:border-secondary outline-none transition-all resize-none placeholder:text-[10px]"
 								placeholder="Como posso te ajudar?"></textarea>
@@ -613,8 +616,38 @@ import heroBg from '../assets/hero_abstract_bg.png';
 		});
 	}
 
+	function initContactForm() {
+		const form = document.getElementById('form-contato') as HTMLFormElement;
+		if (!form) return;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			
+			const nomeEl = document.getElementById('contato-nome') as HTMLInputElement | null;
+			const whatsappEl = document.getElementById('contato-whatsapp') as HTMLInputElement | null;
+			const mensagemEl = document.getElementById('contato-mensagem') as HTMLTextAreaElement | null;
+
+			if (!nomeEl || !whatsappEl || !mensagemEl) return;
+
+			const nome = nomeEl.value;
+			const whatsapp = whatsappEl.value;
+			const mensagem = mensagemEl.value;
+			
+			const numeroWhatsApp = '5544991581606';
+			const textoBase = `Olá Layla, meu nome é ${nome}. \n\nTenho interesse em agendar uma conversa. \n\n*WhatsApp:* ${whatsapp} \n*Mensagem:* ${mensagem}`;
+			
+			const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoBase)}`;
+			
+			window.open(url, '_blank');
+		});
+	}
+
 	initReadMore();
-	document.addEventListener('astro:after-swap', initReadMore);
+	initContactForm();
+	document.addEventListener('astro:after-swap', () => {
+		initReadMore();
+		initContactForm();
+	});
 </script>
 
 <style>
