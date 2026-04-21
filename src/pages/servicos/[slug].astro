@@ -8,7 +8,7 @@ export function getStaticPaths() {
     { params: { slug: 'ansiedade' }, props: { 
       title: 'Terapia para Ansiedade Online', 
       h1: 'Lidando com a Ansiedade: Reencontre sua Paz',
-      description: 'Tratamento especializado para ansiedade com foco em TCC. Atendimento online com a Dra. Layla Sandes.',
+      description: 'Tratamento especializado para ansiedade com foco em TCC. Atendimento online com a psicóloga Layla Sandes.',
       content: 'A ansiedade pode se manifestar de diversas formas: preocupação excessiva, medo de desagradar e dificuldade em dizer não. Na terapia TCC, trabalhamos para identificar os padrões de pensamento e desenvolver ferramentas práticas para que você recupere o controle da sua vida.',
       forWhom: ['Pessoas que se sentem constantemente sobrecarregadas', 'Quem tem dificuldade em dizer “não” aos outros', 'Quem sofre com o medo constante de desagradar', 'Pessoas em busca de autonomia emocional'],
       benefits: ['Melhor controle sobre pensamentos intrusivos', 'Desenvolvimento de limites saudáveis', 'Recuperação da qualidade de vida', 'Autonomia e segurança emocional'],
@@ -48,7 +48,7 @@ export function getStaticPaths() {
   ];
 }
 
-const { title, h1, description, content, forWhom, benefits, icon, color } = Astro.props;
+const { title, h1, description, content, forWhom, benefits, icon } = Astro.props;
 ---
 
 <Layout title={title} description={description}>

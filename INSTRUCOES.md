@@ -40,10 +40,9 @@ Mova as imagens geradas para a pasta `public/images/`:
 - Adicione ícones ou fotos profissionais para os posts do blog em `public/images/`.
 
 ### 3. Personalização Final
-No código, procure por termos entre colchetes e substitua pelos dados reais da Dra. Layla:
-- `[Sua Cidade]` -> Ex: Salvador, São Paulo, etc.
-- `[CRP]` -> Registro Profissional.
+Os artigos do blog e as páginas principais já foram revisados e não possuem termos pendentes entre colchetes. O site está pronto para uso com as informações da Psicóloga Layla Sandes.
 - `[WhatsApp]` -> Link Real do WhatsApp na `Layout.astro` e `Footer.astro`.
+- `[Instagram]` -> Link Real do Instagram no `Footer.astro`.
 
 ### 4. Execução Local
 Para visualizar o site em desenvolvimento:
