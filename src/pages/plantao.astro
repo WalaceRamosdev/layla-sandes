@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+	title="Plantão Psicológico"
+	description="Atendimento pontual em sessão única para momentos de sobrecarga emocional, decisões difíceis ou conflitos imediatos."
+>
+	<Header />
+
+	<main class="pt-32">
+		<!-- Hero Plantão -->
+		<section class="section-padding bg-primary min-h-[60vh] flex items-center">
+			<div class="max-w-4xl mx-auto px-6 text-center reveal">
+				<span class="text-accent uppercase tracking-widest text-xs mb-4 block font-bold">Atendimento Pontual</span>
+				<h1 class="text-4xl md:text-6xl font-display mb-8">Plantão <span class="text-secondary italic">Psicológico</span></h1>
+				<p class="text-xl text-text-muted leading-relaxed mb-10">
+					O plantão psicológico é um projeto pensado para momentos em que você não precisa necessariamente iniciar uma terapia, mas sente que precisa conversar agora.
+				</p>
+				<a href="https://wa.me/5544991581606" target="_blank" class="btn-primary">Verificar horários disponíveis</a>
+			</div>
+		</section>
+
+		<!-- O que é -->
+		<section class="section-padding bg-white">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+					<div class="reveal">
+						<h2 class="text-3xl md:text-4xl mb-8 font-serif text-secondary">Quando procurar o plantão?</h2>
+						<p class="text-lg text-text-muted mb-6 leading-relaxed">
+							Sabe quando algo acontece, tudo se acumula, e fica difícil organizar sozinho(a)? O plantão surge exatamente para esses momentos.
+						</p>
+						<p class="text-lg text-text-muted mb-8 leading-relaxed">
+							É um atendimento pontual, em sessão única, voltado para situações específicas como sobrecarga emocional, decisões difíceis ou conflitos do momento.
+						</p>
+						<div class="bg-soft-bg p-8 rounded-2xl border-l-4 border-accent">
+							<p class="text-accent italic font-medium">
+								"A proposta não é aprofundar toda a sua história, mas oferecer um espaço de escuta, acolhimento e reflexão para entender o que está acontecendo e pensar em caminhos possíveis."
+							</p>
+						</div>
+					</div>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
+						{[
+							{ title: "Atendimento Online", icon: "🌐", text: "Sessões realizadas via Google Meet no conforto da sua casa." },
+							{ title: "Sessão Única", icon: "📍", text: "Atendimento pontual, sem compromisso de continuidade imediata." },
+							{ title: "Duração", icon: "⏱️", text: "Aproximadamente 50 minutos de escuta qualificada." },
+							{ title: "Foco Atual", icon: "🎯", text: "Foco em uma situação atual e específica que gera desconforto." }
+						].map(item => (
+							<div class="p-8 bg-primary rounded-3xl border border-accent/5 hover:border-accent/20 transition-all shadow-sm">
+								<div class="text-3xl mb-4">{item.icon}</div>
+								<h3 class="text-lg font-bold text-secondary mb-2 uppercase tracking-widest text-[11px]">{item.title}</h3>
+								<p class="text-sm text-text-muted">{item.text}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Como funciona -->
+		<section class="section-padding bg-soft-bg">
+			<div class="max-w-4xl mx-auto px-6 text-center reveal">
+				<h2 class="text-3xl md:text-4xl mb-12">Como funciona?</h2>
+				<div class="space-y-8 text-left max-w-2xl mx-auto">
+					<div class="flex items-start space-x-4">
+						<div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+						<p class="text-text-muted">Você entra em contato para verificar a disponibilidade imediata ou horários de plantão do dia.</p>
+					</div>
+					<div class="flex items-start space-x-4">
+						<div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+						<p class="text-text-muted">Realizamos a sessão única focada na sua demanda urgente ou pontual.</p>
+					</div>
+					<div class="flex items-start space-x-4">
+						<div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+						<p class="text-text-muted">O plantão não substitui a terapia contínua, mas pode ser seu primeiro espaço de acolhimento.</p>
+					</div>
+				</div>
+				
+				<div class="mt-16 p-10 bg-white rounded-[3rem] border border-accent/10 shadow-sm">
+					<p class="text-text-muted mb-8 italic">
+						"Não existe certo ou errado na terapia. Você pode chegar como está, mesmo que ainda não consiga organizar tudo em palavras."
+					</p>
+					<a href="https://wa.me/5544991581606" target="_blank" class="btn-primary">Agendar pelo WhatsApp</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Importante -->
+		<section class="section-padding bg-white">
+			<div class="max-w-3xl mx-auto px-6 text-center reveal">
+				<div class="bg-secondary/5 p-8 md:p-12 rounded-3xl border border-secondary/10">
+					<h3 class="text-secondary font-display text-2xl mb-6 italic">Aviso Importante</h3>
+					<p class="text-text-muted leading-relaxed">
+						Os horários de plantão podem variar conforme disponibilidade. Se quiser verificar os horários disponíveis, você pode entrar em contato comigo pelo WhatsApp ou pelo Instagram.
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>
