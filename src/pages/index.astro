@@ -2,8 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Image } from 'astro:assets';
-import heroBg from '../assets/hero_abstract_bg.png';
+
 ---
 
 <Layout
@@ -18,15 +17,29 @@ import heroBg from '../assets/hero_abstract_bg.png';
 			id="home"
 			class="relative min-h-[90vh] flex items-center pt-20 bg-primary overflow-hidden"
 		>
-            <!-- Background Abstract Texture -->
-            <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none opacity-[0.9]">
-                <Image 
-                    src={heroBg} 
-                    alt="Background Abstrato" 
-                    class="w-full h-full object-cover animate-pulse-slow"
-                />
-                <!-- Gradient Overlay to blend with primary background -->
-                <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-primary/30 to-primary"></div>
+            <!-- Calm Light Sea Background Animation -->
+            <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none bg-gradient-to-b from-[#FDFBFB] via-[#F8E8E8] to-[#E8D5D5]">
+                <!-- Soft Horizon Light -->
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[20%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gradient-to-t from-[#C89A4B]/15 to-transparent rounded-full blur-[80px] md:blur-[120px] opacity-25"></div>
+                
+                <!-- Moving Waves (Matching Sky Color but transparent) -->
+                <div class="absolute bottom-0 left-0 w-full h-[30%] md:h-[40%]">
+                    <svg class="waves w-full h-full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                        </defs>
+                        <g class="parallax">
+                            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(122, 30, 30, 0.18)" />
+                            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(122, 30, 30, 0.25)" />
+                            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(200, 154, 75, 0.12)" />
+                            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(122, 30, 30, 0.35)" />
+                        </g>
+                    </svg>
+                </div>
+                
+                <!-- Bottom Blend -->
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary"></div>
             </div>
 
 			<div
@@ -654,6 +667,45 @@ import heroBg from '../assets/hero_abstract_bg.png';
 </script>
 
 <style>
+    .waves {
+        position: relative;
+        width: 100%;
+        margin-bottom: -7px;
+    }
+
+    .parallax > use {
+        animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+    }
+
+    .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+    }
+
+    .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+
+    .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+    }
+
+    @keyframes move-forever {
+        0% {
+            transform: translate3d(-90px, 0, 0);
+        }
+        100% {
+            transform: translate3d(85px, 0, 0);
+        }
+    }
+
     .animate-pulse-slow {
         animation: pulse-slow 15s infinite ease-in-out;
     }
