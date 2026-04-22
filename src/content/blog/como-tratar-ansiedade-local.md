@@ -1,7 +1,7 @@
 ---
 title: "Como tratar ansiedade de forma eficaz: Guia Completo e Científico"
 description: "Um mergulho profundo nas causas da ansiedade, como a TCC atua no cérebro e onde encontrar suporte especializado online."
-pubDate: 2026-04-21T10:00:00
+pubDate: 2026-04-23T10:00:00
 category: "Ansiedade"
 heroImage: "/images/blog/banner_ansiedade_calma_1776795237942.png"
 ---
