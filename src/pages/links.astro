@@ -3,9 +3,34 @@ import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Links Importantes | Psicóloga Layla Sandes" description="Acompanhe o meu trabalho e agende sua consulta.">
-	<main class="h-screen h-[100dvh] max-h-screen bg-secondary flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden relative selection:bg-accent/20">
-        <!-- Canvas for Particles (Subtle on red background) -->
-        <canvas id="particles-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-30"></canvas>
+	<main class="h-screen h-[100dvh] max-h-screen bg-primary flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden relative selection:bg-accent/20">
+        <!-- Calm Light Sea Background Animation (from Hero) -->
+        <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none bg-gradient-to-b from-[#FDFBFB] via-[#F8E8E8] to-[#E8D5D5]">
+            <!-- Soft Horizon Light -->
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[20%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gradient-to-t from-[#C89A4B]/15 to-transparent rounded-full blur-[80px] md:blur-[120px] opacity-25"></div>
+            
+            <!-- Bottom Blend -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary"></div>
+
+            <!-- Moving Waves -->
+            <div class="absolute bottom-0 left-0 w-full h-[20%] md:h-[45%] z-10">
+                <svg class="waves w-full h-full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-10 88-10s 58 10 88 10 58-10 88-10 58 10 88 10 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(122, 30, 30, 0.18)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(122, 30, 30, 0.25)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(200, 154, 75, 0.12)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(122, 30, 30, 0.35)" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Floating Particles Canvas -->
+        <canvas id="particles-canvas" class="absolute inset-0 z-[1] pointer-events-none opacity-60"></canvas>
 
         <!-- Central Modal Container -->
         <div class="w-full max-w-[420px] bg-white/90 backdrop-blur-2xl rounded-[3rem] shadow-2xl flex flex-col items-center justify-between p-8 md:p-12 relative z-10 h-full max-h-[850px] overflow-hidden border border-white/20">
@@ -24,7 +49,7 @@ import Layout from '@/layouts/Layout.astro';
                         <h1 class="text-3xl md:text-5xl text-accent tracking-tight font-display leading-none">
                             <span class="text-secondary">L</span>ayla Sandes
                         </h1>
-                        <p class="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-accent mt-3 font-sans font-semibold">Psicologia | CRP 08/47025</p>
+                        <p class="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-accent mt-3 font-sans font-semibold">Psicóloga | CRP 08/47025</p>
                     </div>
                 </div>
 
@@ -33,7 +58,7 @@ import Layout from '@/layouts/Layout.astro';
                     <!-- Site Oficial -->
                     <a 
                         href="/" 
-                        class="link-card group flex items-center p-1 bg-primary/30 border border-accent/10 rounded-full hover:bg-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 opacity-0"
+                        class="link-card group flex items-center p-1 bg-primary/30 border border-accent/100 rounded-full hover:bg-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 opacity-0"
                     >
                         <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-accent text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 ml-0.5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-5 md:h-5"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -47,7 +72,7 @@ import Layout from '@/layouts/Layout.astro';
                     <a 
                         href="https://wa.me/5544991581606" 
                         target="_blank" 
-                        class="link-card group flex items-center p-1 bg-primary/30 border border-accent/10 rounded-full hover:bg-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 opacity-0"
+                        class="link-card group flex items-center p-1 bg-primary/30 border border-accent/100 rounded-full hover:bg-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 opacity-0"
                     >
                         <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-accent text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 ml-0.5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-5 md:h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -61,7 +86,7 @@ import Layout from '@/layouts/Layout.astro';
                     <a 
                         href="https://www.instagram.com/psi.laylasandes?igsh=MWs2cXo3c21tZ2xrdg%3D%3D" 
                         target="_blank" 
-                        class="link-card group flex items-center p-1 bg-primary/30 border border-accent/10 rounded-full hover:bg-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 opacity-0"
+                        class="link-card group flex items-center p-1 bg-primary/30 border border-accent/100 rounded-full hover:bg-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 opacity-0"
                     >
                         <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-accent text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 ml-0.5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-5 md:h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -74,7 +99,7 @@ import Layout from '@/layouts/Layout.astro';
                     <!-- E-mail -->
                     <a 
                         href="mailto:layla.tamily@hotmail.com" 
-                        class="link-card group flex items-center p-1 bg-primary/30 border border-accent/10 rounded-full hover:bg-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 opacity-0"
+                        class="link-card group flex items-center p-1 bg-primary/30 border border-accent/100 rounded-full hover:bg-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 opacity-0"
                     >
                         <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-accent text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 ml-0.5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-5 md:h-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -108,10 +133,51 @@ import Layout from '@/layouts/Layout.astro';
     :global(.fixed.bottom-6.right-6) {
         display: none !important;
     }
+
+    /* Wave Animation Styles */
+    .waves {
+        position: relative;
+        width: 100%;
+        margin-bottom: -7px;
+    }
+
+    .parallax > use {
+        animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 15s;
+    }
+
+    .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 25s;
+    }
+
+    .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 35s;
+    }
+
+    .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 45s;
+    }
+
+    @keyframes move-forever {
+        0% {
+            transform: translate3d(-90px, 0, 0);
+        }
+        100% {
+            transform: translate3d(85px, 0, 0);
+        }
+    }
 </style>
 
 <script>
     import gsap from 'gsap';
+
 
     function initParticles() {
         const canvas = document.getElementById('particles-canvas') as HTMLCanvasElement;
@@ -120,7 +186,7 @@ import Layout from '@/layouts/Layout.astro';
         if (!ctx) return;
 
         let particles: Particle[] = [];
-        const particleCount = 40;
+        const particleCount = 60; // Increased density
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -138,10 +204,10 @@ import Layout from '@/layouts/Layout.astro';
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
+                this.size = Math.random() * 2.5 + 0.5; // Slightly larger
                 this.speedX = (Math.random() - 0.5) * 0.4;
                 this.speedY = (Math.random() - 0.5) * 0.4;
-                this.opacity = Math.random() * 0.4 + 0.1;
+                this.opacity = Math.random() * 0.5 + 0.2; // Higher base opacity
             }
 
             update() {
@@ -156,7 +222,7 @@ import Layout from '@/layouts/Layout.astro';
 
             draw() {
                 if (!ctx) return;
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.fillStyle = `rgba(122, 30, 30, ${this.opacity})`; // Secondary Red (#7A1E1E)
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -198,7 +264,6 @@ import Layout from '@/layouts/Layout.astro';
             opacity: 1,
             y: 0,
             duration: 1,
-            stagger: 0.12,
             stagger: 0.12,
             startAt: { y: 30 }
         }, "-=0.8")
