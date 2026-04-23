@@ -12,12 +12,20 @@ import Layout from '@/layouts/Layout.astro';
             
             <div class="w-full flex flex-col items-center">
                 <!-- Branding Area -->
-                <div class="w-full max-w-[160px] md:max-w-[200px] mb-6 md:mb-8 text-center reveal opacity-0 flex flex-col items-center">
-                    <img 
-                        src="/images/logos/LS-logomarca-normal.png" 
-                        alt="Layla Sandes Psicologia" 
-                        class="w-full h-auto mx-auto"
-                    />
+                <div class="w-full flex flex-col items-center mb-6 md:mb-8 reveal opacity-0">
+                    <div class="max-w-[70px] md:max-w-[90px] mx-auto">
+                        <img 
+                            src="/images/logos/logoLinks.svg" 
+                            alt="Logo Layla Sandes" 
+                            class="w-full h-auto"
+                        />
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h1 class="text-3xl md:text-5xl text-accent tracking-tight font-display leading-none">
+                            <span class="text-secondary">L</span>ayla Sandes
+                        </h1>
+                        <p class="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-accent mt-3 font-sans font-semibold">Psicologia | CRP 08/47025</p>
+                    </div>
                 </div>
 
                 <!-- Links Container -->
@@ -190,6 +198,7 @@ import Layout from '@/layouts/Layout.astro';
             opacity: 1,
             y: 0,
             duration: 1,
+            stagger: 0.12,
             stagger: 0.12,
             startAt: { y: 30 }
         }, "-=0.8")
