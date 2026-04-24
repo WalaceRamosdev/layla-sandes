@@ -32,4 +32,4 @@ Na terapia, trabalhamos para que você retome as rédeas da sua atenção:
 A vida real acontece no aqui e no agora, com todas as suas imperfeições, tédios e belezas não editadas. Aprender a viver offline é essencial para ter saúde mental online.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

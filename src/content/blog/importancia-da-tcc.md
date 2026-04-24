@@ -33,4 +33,4 @@ Se você busca uma mudança concreta, baseada na compreensão profunda de como s
 ---
 *Layla Sandes é Psicóloga Clínica (CRP 08/47025) com foco em TCC. Atendimento humanizado e focado em resultados.*
 
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

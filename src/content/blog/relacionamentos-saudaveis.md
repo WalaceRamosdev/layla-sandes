@@ -30,4 +30,4 @@ Estabelecer limites não é agressividade. É proteção. Um limite saudável pr
 Se sua relação está pesada, cheia de jogos emocionais ou você sente que se perdeu de si mesma para caber na vida de alguém, a terapia de casal ou individual pode ser o ponto de virada para construir laços reais e nutritivos.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

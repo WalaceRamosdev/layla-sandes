@@ -28,4 +28,4 @@ Na terapia, o foco não é em agendas e cronogramas, mas na **regulação emocio
 Mudar seu hábito de execução é um processo gentil de autodescoberta e disciplina amorosa. Se você sente que seu potencial está sendo desperdiçado pelo hábito de adiar, a terapia pode te devolver o comando da sua produtividade.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteuo administrado por Sites Alpha Code*

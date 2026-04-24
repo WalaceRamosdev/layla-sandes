@@ -1,0 +1,168 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+
+// Manual do Projeto - Versão Final Consolidada
+// Data: 23/04/2026 - 21:50
+---
+
+<Layout 
+    title="Manual Técnico e de Marca | Layla Sandes"
+    description="Documentação técnica completa e diretrizes de marca do ecossistema digital Layla Sandes."
+>
+    <main class="manual-root" style="background-color: #FDFBFB; min-height: 100vh; padding-bottom: 5rem;">
+        
+        <!-- Sticky Header -->
+        <header class="manual-header" style="position: sticky; top: 0; z-index: 100; background-color: rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(122, 30, 30, 0.1); backdrop-filter: blur(10px); padding: 1.5rem 2rem;">
+            <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <img src="/images/logos/logo.svg" alt="Logo" style="height: 50px;" />
+                    <div style="width: 1px; height: 30px; background-color: #eee; display: none; @media (min-width: 768px) { display: block; }"></div>
+                    <div>
+                        <h1 style="font-family: 'Avegas Royale', serif; font-size: 1.25rem; color: #7A1E1E; margin: 0;">Manual do Projeto</h1>
+                        <p style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; color: #C89A4B; font-weight: bold; margin: 0;">Ecossistema Digital v1.0</p>
+                    </div>
+                </div>
+                <nav style="display: flex; gap: 1.5rem;">
+                    <a href="#arquitetura" style="text-decoration: none; color: #7A1E1E; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em;">Arquitetura</a>
+                    <a href="#design" style="text-decoration: none; color: #7A1E1E; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em;">Design</a>
+                    <a href="#infra" style="text-decoration: none; color: #7A1E1E; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em;">Infraestrutura</a>
+                </nav>
+            </div>
+        </header>
+
+        <div style="max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem;">
+            
+            <!-- Intro -->
+            <section style="margin-bottom: 6rem; background-color: #7A1E1E; border-radius: 2.5rem; padding: 3rem; color: white; box-shadow: 0 20px 40px rgba(122, 30, 30, 0.15);">
+                <div style="max-width: 600px;">
+                    <span style="color: #C89A4B; text-transform: uppercase; letter-spacing: 0.3em; font-size: 9px; font-weight: bold; display: block; margin-bottom: 1.5rem;">Visão Geral do Projeto</span>
+                    <h2 style="font-family: 'Avegas Royale', serif; font-size: 3rem; margin-bottom: 2rem; line-height: 1.1;"><span style="color: #C89A4B; font-style: italic;">Layla Sandes</span> | <br>Este é o seu legado Digital</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.8; line-height: 1.6; font-weight: 300;">
+                        Este manual documenta a construção de uma plataforma que une a ciência da psicologia com o que há de mais moderno em tecnologia web.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 01. Arquitetura -->
+            <section id="arquitetura" style="margin-bottom: 6rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem;">
+                    <span style="font-family: 'Avegas Royale', serif; font-size: 2rem; color: #C89A4B; opacity: 0.3;">01</span>
+                    <h2 style="font-family: 'Avegas Royale', serif; font-size: 2.5rem; color: #7A1E1E; margin: 0;">Arquitetura do Ecossistema</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div style="background-color: white; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f0f0f0;">
+                        <h3 style="font-family: 'Avegas Royale', serif; font-size: 1.5rem; color: #7A1E1E; margin-bottom: 1.5rem;">Página Home</h3>
+                        <p style="font-size: 13px; color: #666; line-height: 1.6;">O centro da experiência. Focada em criar conexão e segurança imediata com o paciente, guiando-o até o agendamento.</p>
+                    </div>
+                    <div style="background-color: white; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f0f0f0;">
+                        <h3 style="font-family: 'Avegas Royale', serif; font-size: 1.5rem; color: #7A1E1E; margin-bottom: 1.5rem;">Página de Links</h3>
+                        <p style="font-size: 13px; color: #666; line-height: 1.6;">Otimizada para Instagram. Funciona como um hub de acesso rápido para as principais redes e canais de contato.</p>
+                    </div>
+                    <div style="background-color: white; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f0f0f0;">
+                        <h3 style="font-family: 'Avegas Royale', serif; font-size: 1.5rem; color: #7A1E1E; margin-bottom: 1.5rem;">Página Plantão</h3>
+                        <p style="font-size: 13px; color: #666; line-height: 1.6;">Serviço especializado para sessões únicas, diferenciando-se claramente da psicoterapia contínua.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02. Design -->
+            <section id="design" style="margin-bottom: 6rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem;">
+                    <span style="font-family: 'Avegas Royale', serif; font-size: 2rem; color: #C89A4B; opacity: 0.3;">02</span>
+                    <h2 style="font-family: 'Avegas Royale', serif; font-size: 2.5rem; color: #7A1E1E; margin: 0;">Identidade & Design</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; @media (max-width: 768px) { grid-template-columns: 1fr; }">
+                    <div style="background-color: white; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f0f0f0;">
+                        <span style="font-size: 9px; text-transform: uppercase; color: #C89A4B; font-weight: bold; letter-spacing: 0.1em;">Cores Principais</span>
+                        <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background-color: #F8F1F2; border-radius: 8px; border: 1px solid #eee;"></div>
+                                <span style="font-size: 12px; font-weight: bold;">#F8F1F2 - Primária</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background-color: #7A1E1E; border-radius: 8px;"></div>
+                                <span style="font-size: 12px; font-weight: bold;">#7A1E1E - Secundária</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background-color: #C89A4B; border-radius: 8px;"></div>
+                                <span style="font-size: 12px; font-weight: bold;">#C89A4B - Accent</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color: #F8F1F2; border-radius: 2rem; padding: 2.5rem; border: 1px solid rgba(200,154,75,0.1);">
+                        <span style="font-size: 9px; text-transform: uppercase; color: #C89A4B; font-weight: bold; letter-spacing: 0.1em;">Tipografia</span>
+                        <div style="margin-top: 2rem; space-y: 1.5rem;">
+                            <p style="font-family: 'Avegas Royale', serif; font-size: 2.5rem; color: #7A1E1E; margin-bottom: 0.5rem;">Avegas Royale</p>
+                            <p style="font-family: 'Poppins', sans-serif; font-size: 1.25rem; color: #333;">Poppins & Outfit</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 03. Tecnologia & Propriedade -->
+            <section id="infra" style="margin-bottom: 6rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem;">
+                    <span style="font-family: 'Avegas Royale', serif; font-size: 2rem; color: #C89A4B; opacity: 0.3;">03</span>
+                    <h2 style="font-family: 'Avegas Royale', serif; font-size: 2.5rem; color: #7A1E1E; margin: 0;">Tecnologia & Propriedade</h2>
+                </div>
+
+                <!-- Astro JS Benefits (Didactic) -->
+                <div style="margin-bottom: 3rem; background-color: #fdfdfd; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f0f0f0;">
+                    <h3 style="font-family: 'Avegas Royale', serif; font-size: 1.8rem; color: #7A1E1E; margin-bottom: 1.5rem;">O Coração Tecnológico: Astro JS</h3>
+                    <p style="font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 2rem;">
+                        Seu site foi construído com o <strong>Astro JS</strong>, a tecnologia mais moderna da atualidade para sites profissionais. Diferente de ferramentas antigas, o Astro foca em <strong>Performance Extrema</strong>.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h4 style="color: #C89A4B; font-size: 11px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: bold;">Velocidade & SEO</h4>
+                            <p style="font-size: 12px; color: #666; line-height: 1.6;">O site carrega instantaneamente. Isso agrada tanto o paciente (que não espera) quanto o Google (que te posiciona melhor).</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #C89A4B; font-size: 11px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: bold;">Segurança Digital</h4>
+                            <p style="font-size: 12px; color: #666; line-height: 1.6;">O sistema é "estático", o que significa que não há brechas para invasões ou quedas de banco de dados.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub & Vercel -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; @media (max-width: 768px) { grid-template-columns: 1fr; }">
+                    <div style="background-color: white; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f0f0f0;">
+                        <h4 style="font-size: 10px; text-transform: uppercase; color: #C89A4B; font-weight: bold; margin-bottom: 1.5rem;">Sede Digital (Hospedagem)</h4>
+                        <p style="font-size: 1.5rem; font-family: 'Avegas Royale', serif; color: #7A1E1E; margin-bottom: 1rem;">Plataforma Vercel</p>
+                        <p style="font-size: 12px; color: #666; line-height: 1.6;">Onde o seu site "mora". É uma plataforma robusta que garante que ele esteja online 24h por dia com certificado de segurança SSL (o cadeado verde no navegador).</p>
+                    </div>
+                    <div style="background-color: white; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f0f0f0;">
+                        <h4 style="font-size: 10px; text-transform: uppercase; color: #C89A4B; font-weight: bold; margin-bottom: 1.5rem;">Cofre do Código (Propriedade)</h4>
+                        <p style="font-size: 1.5rem; font-family: 'Avegas Royale', serif; color: #7A1E1E; margin-bottom: 1rem;">Repositório GitHub</p>
+                        <p style="font-size: 12px; color: #666; line-height: 1.6; margin-bottom: 1.5rem;"><strong>Importante:</strong> Este link contém toda a "receita" e inteligência do seu site. Ele é de sua propriedade absoluta.</p>
+                        <p style="font-size: 11px; color: #7A1E1E; background: #fff5f5; padding: 1rem; border-radius: 12px; line-height: 1.5; border: 1px dashed #7A1E1E/20;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; margin-right: 5px; vertical-align: middle;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                            <a href="https://github.com/WalaceRamosdev/layla-sandes.git" target="_blank" style="text-decoration: underline; color: #7A1E1E; font-weight: bold;">Acesse o Código Aqui</a>
+                            <br><span style="display: block; margin-top: 8px; opacity: 0.8;">Guarde este link. Caso futuramente você deseje contratar outro profissional para realizar manutenções ou expansões, é este endereço que ele utilizará.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Manual -->
+            <section style="text-align: center; border-top: 1px solid #eee; padding-top: 4rem;">
+                <h3 style="font-family: 'Avegas Royale', serif; font-size: 2rem; color: #7A1E1E; margin-bottom: 2rem; font-style: italic;">O projeto está pronto para você.</h3>
+                <a href="/" style="display: inline-block; background-color: #7A1E1E; color: white; padding: 1.25rem 3rem; border-radius: 100px; text-decoration: none; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.2em;">Voltar ao Site Oficial</a>
+            </section>
+
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    /* Estilos Adicionais p/ Responsividade */
+    @media (max-width: 768px) {
+        h2 { font-size: 2rem !important; }
+        .manual-header nav { display: none !important; }
+    }
+</style>

@@ -29,4 +29,4 @@ A recuperação do Burnout exige mais do que apenas férias; exige uma **reforma
 Sair do Burnout é um processo de redescoberta do prazer de viver além do crachá. Se você sente que sua chama está se apagando, a terapia é o lugar de reencontrar o equilíbrio.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

@@ -34,4 +34,4 @@ No processo terapêutico, focamos na construção de uma **Autoestima Baseada em
 Você não precisa ser perfeita para ter valor. Ocupar o seu lugar com confiança é um direito que se cultiva na terapia.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

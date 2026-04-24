@@ -28,4 +28,4 @@ Na TCC, trabalhamos para mudar o seu "monólogo interno".
 Ser gentil consigo mesma não é "passar o pano" para seus erros, mas sim criar um ambiente interno seguro para que você possa aprender com eles e seguir em frente com mais força.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

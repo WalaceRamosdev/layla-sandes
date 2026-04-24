@@ -36,4 +36,4 @@ Na Terapia Cognitivo-Comportamental, utilizamos o **Treino de Assertividade**:
 Aprender a se posicionar é um processo de libertação. Não se trata de ganhar uma briga, mas de garantir que você também está presente na relação.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

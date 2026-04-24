@@ -33,4 +33,4 @@ No consultório, trabalhamos de forma pragmática para quebrar essa tirania do "
 Superar esse padrão não significa tornar-se uma pessoa fria ou grosseira. Pelo contrário: limites claros criam relações muito mais sinceras e menos baseadas na manipulação ou na culpa. Aprender a dizer "não" é, acima de tudo, dizer um "sim" definitivo para você mesma.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

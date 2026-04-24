@@ -26,11 +26,11 @@ Diferente de abordagens puramente reflexivas, a TCC foca na tríade: **Pensament
 
 A boa notícia é que a ansiedade é altamente tratável. Buscar uma psicóloga que compreenda a dinâmica da vida moderna e que utilize métodos baseados em evidências científicas é o primeiro passo para a recuperação.
 
-No meu consultório, o tratamento é estruturado. Não apenas "conversamos", mas traçamos metas claras, utilizamos inventários de sintomas e desenvolvemos habilidades que você levará para a vida toda. O objetivo final é que você se torne sua própria terapeuta, aprendendo a manejar os sintomas antes que eles se transformem em crises.
+No meu consultório, o tratamento é estruturado. Não apenas "conversamos", mas traçamos metas claras, utilizamos inventários de sintomas e desenvolvemos habilidades que você levará para a vida toda. O objetivo final é que você se torne seu próprio terapeuta, aprendendo a manejar os sintomas antes que eles se transformem em crises.
 
 Se você sente que seus dias estão sendo dominados pelo medo do "e se?", saiba que existe um caminho de volta para a calma e para a autonomia.
 
 ---
 *Layla Sandes é Psicóloga Clínica (CRP 08/47025) com foco em TCC. Atendimento humanizado 100% online.*
 
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

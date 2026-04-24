@@ -34,4 +34,4 @@ Lembre-se: cuidar da mente é o maior investimento que você pode fazer na sua q
 ---
 *Layla Sandes é Psicóloga Clínica (CRP 08/47025) com foco em TCC. Atendimento humanizado 100% online.*
 
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*

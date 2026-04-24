@@ -30,4 +30,4 @@ A TCC tem excelentes resultados para a Ansiedade Social através de:
 A liberdade social não vem da ausência completa de ansiedade, mas da coragem de interagir apesar dela. Se o medo do outro está limitando sua carreira ou sua vida pessoal, saiba que existe tratamento eficaz.
 
 ---
-*Conteudo administrado por Sites Alpha Code*
+*Conteúdo administrado por Sites Alpha Code*
